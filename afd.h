@@ -1,20 +1,20 @@
-/*****************************************************************/
+/****************************************************************
 	                  AUTOMATA FINITO DETERMINISTA
 	  Instituto Politecnico Nacional
 	  Escuela Superior de Computo 
 	  Copiladores
 	  Equipo:
 	  	David Duran Rodriguez
-/*****************************************************************/
+****************************************************************/
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <stdlib.h>
+
 #define MAX 100
-#ifndef __AFD_H
-#define __AFD
+#ifndef AFD_H
+#define AFD_H
 
 using namespace std;
 
@@ -30,8 +30,8 @@ class AFD
 {
 
 private:
-	char simbolos[];
-	string estados[];
+	char *simbolos;
+	string *estados;
 	string estado_inicial;
 	string estado_final;
 
@@ -39,12 +39,12 @@ private:
 
 public:
 	//constructor
-	afd(char simbolos[], string estados[], string estado_inicial, string estado_final);
+	AFD(char *simbolos, string *estados, string estado_inicial, string estado_final);
 	
 	//metodos
 	void crearAutomata();
 	void validar_palabra(string);
-	void validar_palabras(string[]);
+	void validar_palabras(string*);
 
 	
 
